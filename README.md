@@ -1,4 +1,4 @@
-
+<img width="1355" height="596" alt="image" src="https://github.com/user-attachments/assets/be83a299-7e1e-419c-bdfc-e5ea085a172b" />
 🔧 WCP Tracker (Western Cape Performance Tracker)
 
 A Flask-based web application designed to track the quarterly performance of government departments against their Annual Performance Plan (APP) indicators. The system provides a centralized portal for data submission, automates compliance checks, and exports clean data ready for business intelligence tools like Power BI.
@@ -43,7 +43,8 @@ Dashboarding	Power BI (via CSV)	Data visualizations for submissions, compliance,
 
 1. Admin Dashboard
 
-![alt text](https://user-images.githubusercontent.com/12345/67890-placeholder.png)
+![alt text](https://user-images.githubusercontent.com/<img width="1355" height="596" alt="image" src="https://github.com/user-attachments/assets/b9edb894-63e6-4179-8d37-1ddcbf48ca97" />
+)
 
 Shows the list of all departments and indicators, with options to add new ones.
 
