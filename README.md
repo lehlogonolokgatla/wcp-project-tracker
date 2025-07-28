@@ -39,12 +39,9 @@ Data Export	Pandas + CSV	Exports submission data for use in Power BI or other to
 Dashboarding	Power BI (via CSV)	Data visualizations for submissions, compliance, and performance KPIs.
 📸 Screenshots
 
-(Note: Replace these with actual screenshots of your running application.)
-
 1. Admin Dashboard
+/<img width="1355" height="596" alt="image" src="https://github.com/user-attachments/assets/b9edb894-63e6-4179-8d37-1ddcbf48ca97" />
 
-(https://user-images.githubusercontent.com/<img width="1355" height="596" alt="image" src="https://github.com/user-attachments/assets/b9edb894-63e6-4179-8d37-1ddcbf48ca97" />
-)
 
 Shows the list of all departments and indicators, with options to add new ones.
 <img width="1346" height="599" alt="image" src="https://github.com/user-attachments/assets/3d7b8c5d-5fcc-4e95-b1c1-13fb295bf07b" />
