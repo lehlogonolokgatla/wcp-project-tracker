@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+    <hr>
+    
+    <form method="POST" action="">
+        {{ form.hidden_tag() }} {# Important for security (CSRF) #}
+        
+        <div class="mb-3">
+            {{ form.name.label(class="form-label") }}
+            {{ form.name(class="form-control", placeholder="e.g., Department of Health") }}
+        </div>
+        
+        <div class="mb-3">
+            {{ form.head_name.label(class="form-label") }}
+            {{ form.head_name(class="form-control", placeholder="e.g., Dr. Jane Doe") }}
+        </div>
+
+        <div class="mb-3">
+            {{ form.email.label(class="form-label") }}
+            {{ form.email(class="form-control", placeholder="e.g., contact@health.gov") }}
+        </div>
+        
+        {{ form.submit(class="btn btn-primary") }}
+        <a href="{{ url_for('admin_dashboard') }}" class="btn btn-secondary">Cancel</a>
+    </form>
+{% endblock %}

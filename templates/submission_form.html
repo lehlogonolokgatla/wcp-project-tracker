@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+    <h4 class="text-muted">{{ indicator.department.name }}</h4>
+    <p><strong>Indicator:</strong> {{ indicator.indicator_name }}</p>
+    <p><strong>Description:</strong> {{ indicator.description }}</p>
+    <p><strong>Quarterly Target:</strong> {{ indicator.target_value }} {{ indicator.unit }}</p>
+    <hr>
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                {{ form.year.label(class="form-label") }}
+                {{ form.year(class="form-control") }}
+            </div>
+            <div class="col-md-6 mb-3">
+                {{ form.quarter.label(class="form-label") }}
+                {{ form.quarter(class="form-select") }}
+            </div>
+        </div>
+        <div class="mb-3">
+            {{ form.actual_value.label(class="form-label") }}
+            {{ form.actual_value(class="form-control", placeholder="Enter the value achieved this quarter") }}
+        </div>
+        <div class="mb-3">
+            {{ form.submitted_by.label(class="form-label") }}
+            {{ form.submitted_by(class="form-control", placeholder="e.g., John Doe") }}
+        </div>
+        {{ form.submit(class="btn btn-primary w-100") }}
+    </form>
+{% endblock %}

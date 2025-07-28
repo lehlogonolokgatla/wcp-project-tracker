@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+    <h1>Admin Dashboard</h1>
+    <hr>
+
+    <!-- Departments Section -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Departments</h2>
+        <a href="{{ url_for('add_department') }}" class="btn btn-success">Add New Department</a>
+    </div>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Head of Department</th>
+                <th>Contact Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dept in departments %}
+            <tr>
+                <td>{{ dept.name }}</td>
+                <td>{{ dept.head_name }}</td>
+                <td>{{ dept.email }}</td>
+            </tr>
+            {% else %}
+            <tr><td colspan="3">No departments found.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <hr class="my-5">
+
+    <!-- Indicators Section -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>APP Indicators</h2>
+        <a href="{{ url_for('add_indicator') }}" class="btn btn-success">Add New Indicator</a>
+    </div>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Department</th>
+                <th>Indicator Name</th>
+                <th>Quarterly Target</th>
+                <th>Unit</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ind in indicators %}
+            <tr>
+                <td>{{ ind.department.name }}</td>
+                <td>{{ ind.indicator_name }}</td>
+                <td>{{ ind.target_value }}</td>
+                <td>{{ ind.unit }}</td>
+                <td>
+                    <a href="{{ url_for('submit_performance', indicator_id=ind.id) }}" class="btn btn-primary btn-sm">Submit Data</a>
+                </td>
+            </tr>
+            {% else %}
+            <tr><td colspan="5">No indicators found.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %}All Submissions{% endblock %}
+
+{% block content %}
+    <h1>Submission History & Audit Trail</h1>
+    <table class="table table-bordered table-hover">
+        <thead class="table-light">
+            <tr>
+                <th>Department</th>
+                <th>Indicator</th>
+                <th>Period</th>
+                <th>Target</th>
+                <th>Actual</th>
+                <th>Variance</th>
+                <th>Submitted At</th>
+                <th>Submitted By</th>
+                <th>Compliance Flags</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sub in submissions %}
+            <tr class="{{ 'table-warning' if sub.flags else '' }}">
+                <td>{{ sub.indicator.department.name }}</td>
+                <td>{{ sub.indicator.indicator_name }}</td>
+                <td>{{ sub.year }} Q{{ sub.quarter }}</td>
+                <td>{{ sub.indicator.target_value }}</td>
+                <td>{{ sub.actual_value }}</td>
+                <td>
+                    {% set variance = sub.actual_value - sub.indicator.target_value %}
+                    <span class="{{ 'text-success' if variance >= 0 else 'text-danger' }}">
+                        {{ '%.2f'|format(variance) }}
+                    </span>
+                </td>
+                <td>{{ sub.submitted_at.strftime('%Y-%m-%d %H:%M') }}</td>
+                <td>{{ sub.submitted_by }}</td>
+                <td>
+                    {% if sub.flags %}
+                        {% for flag in sub.flags %}
+                        <span class="badge 
+                            {% if flag.flag_type == 'Underperformance' %}bg-danger
+                            {% elif flag.flag_type == 'Late Submission' %}bg-warning text-dark
+                            {% else %}bg-secondary{% endif %}">
+                            {{ flag.flag_type }}
+                        </span>
+                        {% endfor %}
+                    {% else %}
+                        <span class="badge bg-success">Compliant</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% else %}
+            <tr><td colspan="9" class="text-center">No submissions yet.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
