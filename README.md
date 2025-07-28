@@ -43,22 +43,27 @@ Dashboarding	Power BI (via CSV)	Data visualizations for submissions, compliance,
 
 1. Admin Dashboard
 
-![alt text](https://user-images.githubusercontent.com/<img width="1355" height="596" alt="image" src="https://github.com/user-attachments/assets/b9edb894-63e6-4179-8d37-1ddcbf48ca97" />
+(https://user-images.githubusercontent.com/<img width="1355" height="596" alt="image" src="https://github.com/user-attachments/assets/b9edb894-63e6-4179-8d37-1ddcbf48ca97" />
 )
 
 Shows the list of all departments and indicators, with options to add new ones.
+<img width="1346" height="599" alt="image" src="https://github.com/user-attachments/assets/3d7b8c5d-5fcc-4e95-b1c1-13fb295bf07b" />
+
 
 2. Submission Form
 
-![alt text](https://user-images.githubusercontent.com/12345/67890-placeholder.png)
+<img width="1358" height="595" alt="image" src="https://github.com/user-attachments/assets/ba7642db-baca-42b3-9475-51b4ac830a54" />
+
 
 The simple form for submitting quarterly performance data for a specific indicator.
+<img width="1358" height="599" alt="image" src="https://github.com/user-attachments/assets/707af8d5-adb7-4816-8f16-5125c204964a" />
+
 
 3. Submissions List & Audit Trail
 
-![alt text](https://user-images.githubusercontent.com/12345/67890-placeholder.png)
-
 A comprehensive table of all submissions, highlighted with compliance flags.
+<img width="1365" height="598" alt="image" src="https://github.com/user-attachments/assets/22369807-fbb5-47b5-b157-19ad71425820" />
+
 
 🚀 Getting Started
 
